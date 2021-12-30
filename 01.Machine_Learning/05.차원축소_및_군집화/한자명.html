@@ -13099,7 +13099,10 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_breast_cancer</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_breast_cancer</span>
 <span class="n">cancer</span> <span class="o">=</span> <span class="n">load_breast_cancer</span><span class="p">()</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cancer</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">cancer</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cancer</span><span class="o">.</span><span class="n">target</span>
@@ -13459,9 +13462,9 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[ 9.19283683,  1.94858306, -1.12316654,  3.63373163, -1.19510816],
-       [ 2.3878018 , -3.76817174, -0.5292924 ,  1.11826331,  0.6217735 ],
-       [ 5.73389628, -1.07517379, -0.5517477 ,  0.91208296, -0.17708482]])</pre>
+<pre>array([[ 9.19283683,  1.94858307, -1.12316616,  3.63373067, -1.19510952],
+       [ 2.3878018 , -3.76817175, -0.52929279,  1.11826417,  0.62177379],
+       [ 5.73389628, -1.0751738 , -0.5517475 ,  0.91208229, -0.17708552]])</pre>
 </div>
 
 </div>
@@ -13531,12 +13534,12 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[ 9.19283683,  1.94858307, -1.12316616,  3.63373092, -1.19511001,
-         1.41142453,  2.15937014, -0.39839434, -0.15712354, -0.87744275],
-       [ 2.3878018 , -3.76817174, -0.52929269,  1.11826386,  0.62177494,
-         0.02865632,  0.01335795,  0.24098583, -0.71190527,  1.10700062],
-       [ 5.73389628, -1.0751738 , -0.5517476 ,  0.91208266, -0.17708593,
-         0.54145216, -0.66816655,  0.09737059,  0.02406961,  0.45427554]])</pre>
+<pre>array([[ 9.19283683,  1.94858307, -1.12316617,  3.6337308 , -1.19511017,
+         1.41142467,  2.15936916, -0.39842149, -0.15712786, -0.87745816],
+       [ 2.3878018 , -3.76817174, -0.52929268,  1.11826394,  0.62177502,
+         0.02865618,  0.01335843,  0.24100096, -0.71189623,  1.10704089],
+       [ 5.73389628, -1.0751738 , -0.5517476 ,  0.91208249, -0.17708598,
+         0.5414526 , -0.66816872,  0.09734663,  0.02404613,  0.45417252]])</pre>
 </div>
 
 </div>
@@ -13580,23 +13583,15 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>PCA 전후 분류(Logistic Regression) 비교</li>
-</ul>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># # 원본 1차원</span>
+<span class="c1"># pca0 = PCA(n_components=None)</span>
+<span class="c1"># cancer_pca0 = pca0.fit_transform(cancer_std)</span>
+<span class="c1"># pca0.explained_variance_ratio_</span>
 </pre></div>
 
     </div>
@@ -13609,46 +13604,9 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
-    <span class="n">cancer</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">cancer</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">cancer</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">2021</span>
-<span class="p">)</span>
-<span class="n">rfc</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span>
-<span class="n">rfc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="n">rfc</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[&nbsp;]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>0.972027972027972</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 점수 올리기 위해 데이터를 정규화</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 정규화한 값을 Logistic Regression</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 </pre></div>
 
     </div>
@@ -13664,9 +13622,9 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
     <span class="n">cancer_std</span><span class="p">,</span> <span class="n">cancer</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">cancer</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">2021</span>
 <span class="p">)</span>
-<span class="n">lrc</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">2021</span><span class="p">)</span>
-<span class="n">lrc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="n">lrc</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="n">lr</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">2021</span><span class="p">)</span>
+<span class="n">lr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">lr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13698,7 +13656,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Code Refactoring</li>
+<li>PCA 전후 분류(Logistic Regression) 비교</li>
 </ul>
 
 </div>
@@ -13711,11 +13669,11 @@ div#notebook {
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">pca_accuracy</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
-    <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">2021</span>
+        <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">2021</span>
     <span class="p">)</span>
-    <span class="n">rfc</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span>
-    <span class="n">rfc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-    <span class="n">score</span> <span class="o">=</span> <span class="n">rfc</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+    <span class="n">lr</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">2021</span><span class="p">)</span>
+    <span class="n">lr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="n">lr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">score</span>
 </pre></div>
 
@@ -13729,12 +13687,12 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]:</span>
-    <span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]:</span>
+    <span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
     <span class="n">cancer_pca</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">cancer_std</span><span class="p">)</span>
     <span class="n">explained</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_ratio_</span><span class="p">)</span>
     <span class="n">acc</span> <span class="o">=</span> <span class="n">pca_accuracy</span><span class="p">(</span><span class="n">cancer_pca</span><span class="p">,</span> <span class="n">cancer</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;PCA </span><span class="si">{}</span><span class="s1">차원의 설명력: </span><span class="si">{}</span><span class="s1">, 정확도: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">explained</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">acc</span><span class="p">,</span> <span class="mi">4</span><span class="p">)))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;PCA </span><span class="si">{}</span><span class="s1">차원의 설명력: </span><span class="si">{}</span><span class="s1">, 정확도: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">explained</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">acc</span><span class="p">,</span> <span class="mi">4</span><span class="p">)))</span>
 </pre></div>
 
     </div>
@@ -13751,13 +13709,31 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>PCA 2차원의 설명력: 0.6324, 정확도: 0.9371
-PCA 5차원의 설명력: 0.8473, 정확도: 0.965
-PCA 10차원의 설명력: 0.9516, 정확도: 0.972
+<pre>PCA 2차원의 설명력: 0.6324, 정확도: 0.9441
+PCA 5차원의 설명력: 0.8473, 정확도: 0.993
+PCA 10차원의 설명력: 0.9516, 정확도: 0.986
 </pre>
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># for d in [None, 2, 5, 10]:</span>
+<span class="c1">#     pca = PCA(n_components=d)</span>
+<span class="c1">#     cancer_pca = pca.fit_transform(cancer_std)</span>
+<span class="c1">#     explained = sum(pca.explained_variance_ratio_)</span>
+<span class="c1">#     acc = pca_accuracy(cancer_pca, cancer.target)</span>
+<span class="c1">#     print(&#39;PCA {}차원의 설명력: {}, 정확도: {}&#39;.format(d, round(explained, 4), round(acc, 4)))</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
