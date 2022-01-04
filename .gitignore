@@ -1,0 +1,64 @@
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/._.DS_Store
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/._activity_labels.txt
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/._features_info.txt
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/._features.txt
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/._README.txt
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/._test
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/._train
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/test/._Inertial Signals
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/test/._subject_test.txt
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/test/._X_test.txt
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/test/._y_test.txt
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/test/Inertial Signals/._body_acc_x_test.txt
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/test/Inertial Signals/._body_acc_y_test.txt
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/test/Inertial Signals/._body_acc_z_test.txt
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/test/Inertial Signals/._body_gyro_x_test.txt
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/test/Inertial Signals/._body_gyro_y_test.txt
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/test/Inertial Signals/._body_gyro_z_test.txt
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/test/Inertial Signals/._total_acc_x_test.txt
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/test/Inertial Signals/._total_acc_y_test.txt
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/test/Inertial Signals/._total_acc_z_test.txt
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/train/._Inertial Signals
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/train/._subject_train.txt
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/train/._X_train.txt
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/train/._y_train.txt
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/train/Inertial Signals/._body_acc_x_train.txt
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/train/Inertial Signals/._body_acc_y_train.txt
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/train/Inertial Signals/._body_acc_z_train.txt
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/train/Inertial Signals/._body_gyro_x_train.txt
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/train/Inertial Signals/._body_gyro_y_train.txt
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/train/Inertial Signals/._body_gyro_z_train.txt
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/train/Inertial Signals/._total_acc_x_train.txt
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/train/Inertial Signals/._total_acc_y_train.txt
+01.Machine_Learning/99.Test/__MACOSX/UCI HAR Dataset/train/Inertial Signals/._total_acc_z_train.txt
+01.Machine_Learning/99.Test/__MACOSX/._UCI HAR Dataset
+01.Machine_Learning/99.Test/human_activity/.DS_Store
+01.Machine_Learning/99.Test/human_activity/activity_labels.txt
+01.Machine_Learning/99.Test/human_activity/features_info.txt
+01.Machine_Learning/99.Test/human_activity/features.txt
+01.Machine_Learning/99.Test/human_activity/README.txt
+01.Machine_Learning/99.Test/human_activity/test/subject_test.txt
+01.Machine_Learning/99.Test/human_activity/test/X_test.txt
+01.Machine_Learning/99.Test/human_activity/test/y_test.txt
+01.Machine_Learning/99.Test/human_activity/test/Inertial Signals/body_acc_x_test.txt
+01.Machine_Learning/99.Test/human_activity/test/Inertial Signals/body_acc_y_test.txt
+01.Machine_Learning/99.Test/human_activity/test/Inertial Signals/body_acc_z_test.txt
+01.Machine_Learning/99.Test/human_activity/test/Inertial Signals/body_gyro_x_test.txt
+01.Machine_Learning/99.Test/human_activity/test/Inertial Signals/body_gyro_y_test.txt
+01.Machine_Learning/99.Test/human_activity/test/Inertial Signals/body_gyro_z_test.txt
+01.Machine_Learning/99.Test/human_activity/test/Inertial Signals/total_acc_x_test.txt
+01.Machine_Learning/99.Test/human_activity/test/Inertial Signals/total_acc_y_test.txt
+01.Machine_Learning/99.Test/human_activity/test/Inertial Signals/total_acc_z_test.txt
+01.Machine_Learning/99.Test/human_activity/train/subject_train.txt
+01.Machine_Learning/99.Test/human_activity/train/X_train.txt
+01.Machine_Learning/99.Test/human_activity/train/y_train.txt
+01.Machine_Learning/99.Test/human_activity/train/Inertial Signals/body_acc_x_train.txt
+01.Machine_Learning/99.Test/human_activity/train/Inertial Signals/body_acc_y_train.txt
+01.Machine_Learning/99.Test/human_activity/train/Inertial Signals/body_acc_z_train.txt
+01.Machine_Learning/99.Test/human_activity/train/Inertial Signals/body_gyro_x_train.txt
+01.Machine_Learning/99.Test/human_activity/train/Inertial Signals/body_gyro_y_train.txt
+01.Machine_Learning/99.Test/human_activity/train/Inertial Signals/body_gyro_z_train.txt
+01.Machine_Learning/99.Test/human_activity/train/Inertial Signals/total_acc_x_train.txt
+01.Machine_Learning/99.Test/human_activity/train/Inertial Signals/total_acc_y_train.txt
+01.Machine_Learning/99.Test/human_activity/train/Inertial Signals/total_acc_z_train.txt
+01.Machine_Learning/99.Test/UCI HAR Dataset.zip
